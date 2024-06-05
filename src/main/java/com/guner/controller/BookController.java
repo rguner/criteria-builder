@@ -72,5 +72,11 @@ public class BookController {
         return new ResponseEntity<>(books, HttpStatus.OK);
     }
 
+    @PostMapping("/urltestslash")
+    public ResponseEntity<Book> urltestslash(@RequestBody Book book){
+        Book savedBook = bookService.createBook(book);
+        return new ResponseEntity<>(savedBook, HttpStatus.CREATED);
+    }
+
 
 }
